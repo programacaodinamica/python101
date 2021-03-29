@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+import ipywidgets as widgets
+
+
 class Figura:
   def __init__(self, tamanho=(12, 12)):
     self.figure, self.axes = plt.subplots(figsize=tamanho)
@@ -22,3 +26,11 @@ class Circulo:
     self.centro = centro
     self.cor = cor
     self.desenho = plt.Circle(centro, raio, color=cor, alpha=transparencia)
+    
+def mostrar_seletor_cor():
+  return widgets.ColorPicker(
+    concise=False,
+    description='Clique na cor',
+    value='#FF0000',
+    disabled=False
+  )
